@@ -1,0 +1,346 @@
+/*
+	  ============================================================
+		   Widget Css Start
+	  ============================================================
+*/
+.widget{
+	float: left;
+	width: 100%;
+}
+/*
+	  ============================================================
+		   Widget Title Start
+	  ============================================================
+*/
+.widget-title{
+	float: left;
+	width: 100%;
+	font-size: 24px;
+	margin: -6px 0 33px;
+	line-height: normal;
+	text-transform: capitalize;
+}
+/*
+	  ============================================================
+		   Widget Title End
+	  ============================================================
+*/
+/*
+	  ============================================================
+		   Widget Navigation Menu Form Start
+	  ============================================================
+*/
+.widget_nav_menu ul{
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: -4px 0 0;
+	list-style: none;
+}
+.widget_nav_menu li{
+    margin: 0;
+    float: left;
+    width: 100%;
+    line-height: 15px;
+    overflow: hidden;
+    padding: 0px 0 0;
+    text-align: right;
+    transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+}
+.widget_nav_menu li a{
+    color: #666;
+    float: left;
+    width: auto;
+    font-size: 15px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    padding: 0 0 0 15px;
+    margin-bottom: 22px;
+    line-height: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+}
+.widget_nav_menu li a:before{
+    left: 0;
+    top: 50%;
+    content: "";
+    margin: -8px 0 0;
+    position: absolute;
+    color: currentcolor;
+    font-family: "FontAwesome";
+    transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+}
+.widget_nav_menu li a:hover{
+	padding-left: 20px;
+}
+.widget_nav_menu li a:hover:before{
+	left: 5px;
+}
+/*
+	  ============================================================
+		   Widget Navigation Menu Form End
+	  ============================================================
+*/
+/*
+	  ============================================================
+		   Widget Contant Form Start
+	  ============================================================
+*/
+.widget-contact-form{
+	padding: 30px;
+	background: rgba(0,0,0,0.2);
+}
+.widget-contact-form .main-heading{
+	margin-bottom: 14px;
+	margin-top: -6px;
+}
+.widget-contact-form .main-heading h5{
+	font-size: 24px;
+}
+.widget-contact-form .main-heading p{
+	width: 100%;
+}
+.widget-contact-form .input-area{
+	margin-bottom: 20px;
+}
+.widget-contact-form .input-area input[type="text"]{
+	background: rgba(255,255,255,0.08);
+}
+.widget-contact-form .input-area input[type="text"]:focus{
+	color: #fff;
+}
+.widget-contact-form .input-area:last-child{
+	margin-bottom: 0;
+}
+.input-area .btn-default{
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.widget-contact-form .input-area input[type="text"]::-webkit-input-placeholder{
+	color: #545c65;
+	opacity: 1;
+}
+.widget-contact-form .input-area input[type="text"]::-moz-placeholder{
+	color: #545c65;
+	opacity: 1;
+}
+/*
+	  ============================================================
+		   Widget Contant Form End
+	  ============================================================
+*/
+/*
+	  ============================================================
+		   Recent Post Start
+	  ============================================================
+*/
+.d-relf-recentpost {
+    float: left;
+    margin: 0 0 20px;
+    position: relative;
+    width: 100%;
+}
+.d-relf-recentpost:last-child {
+    margin: 0;
+}
+.d-relf-recentpost figure {
+    width: 69px;
+    margin-right: 15px;
+}
+.d-relf-recentpost:hover figure img {
+    opacity: 0.3;
+}
+.d-relf-recentpost h6 {
+    float: left;
+    font-size: 16px;
+    line-height: normal;
+    width: 100%;
+    margin: 0 0 9px;
+}
+.d-relf-recentpost .kf_date{
+	font-size: 12px;
+	line-height: normal;
+	font-style: normal;
+	text-transform: capitalize;
+}
+.d-relf-recentpost .icon-box {
+    left: 10%;
+    opacity: 0;
+}
+.d-relf-recentpost:hover .icon-box {
+    left: 0;
+    opacity: 1;
+}
+/*
+	  ============================================================
+		   Recent Post End
+	  ============================================================
+*/
+
+
+
+.d-relf-footer-1  .footer-contact p,
+.d-relf-footer-1 .footer-contact h6,
+.d-relf-footer-1 .d-relf-recentpost .kf_date,
+.d-relf-footer-1 .d-relf-recentpost h6 a,
+.d-relf-footer-1 .widget-title,
+.d-relf-footer-1 .widget_nav_menu li a{
+	color: #fff;
+}
+.widget-search form,
+.widget,
+.widget-search{
+	float: left;
+	width: 100%;
+}
+.widget{
+	margin-bottom: 23px;
+}
+.widget .main-heading{
+	margin-bottom: 2px;
+}
+.widget .main-heading h5{
+	font-size: 24px;
+	text-transform: capitalize;
+}
+.widget .main-heading h5:after{
+	bottom: 8px;
+}
+.widget .main-heading h5:before{
+	bottom: 3px;
+}
+
+.seach_menu{
+	float: left;
+	position: relative;
+	width: 100%;
+}
+.seach_menu input{
+	width: 100%;
+	height: 50px;
+	line-height: normal;
+	padding: 0px 15px;
+	font-weight: 500;
+	font-size: 15px;
+	border-radius: 4px;
+	text-transform: capitalize;
+}
+.seach_menu input::-moz-placeholder{
+	color:#999999;
+}
+/* .seach_menu input::-0-placeholder{
+	color:#999999;
+} */
+.seach_menu input::-webkit-placeholder{
+	color:#999999;
+}
+.seach_menu button{
+	position: absolute;
+	top:50%;
+	right: 0px;
+	padding: 0px 15px 0px 15px;
+	margin-top: -10px;
+	background-color: transparent;
+	border-left: 1px solid #ccc;
+}
+
+.widget-categories{
+	float: left;
+	width: 100%;
+}
+.widget-categories ul,
+.widget-tags,
+.widget-photostream,
+.widget_latest_posts{
+	float: left;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.widget-categories ul li{
+	float: left;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+}
+.widget-categories ul li a{
+	display: inline-block;
+	width: 100%;
+	padding: 16px 0px 15px;
+}
+.widget-categories ul li span{
+	float: right;
+}
+
+.widget_latest_posts li{
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding: 15px 0px;
+}
+.text-overflow span{
+	display: inline-block;
+	float: left;
+	width: 100%;
+}
+.text-overflow span i{
+	float: left;
+	padding: 2px 10px 0px 0px;
+}
+.widget_latest_posts .d-relf-recentpost figure{
+	width: 80px;
+}
+.widget-urgentcauses .widget-campaing-thumb{
+	float: left;
+	width: 100%;
+	padding: 0px;
+}
+.widget-urgentcauses .widget-campaing-thumb .campaing-thumb-contant{
+	padding: 10px 14px 0;
+	background-color: #f9f9f9;
+}
+.widget-photostream li{
+	float: left;
+	width: 33.333%;
+
+}
+.widget-photostream li a{
+	display: inline-block;
+	width: 100%;
+	padding: 5px;
+}
+.widget-photostream li a img{
+	width: 100%;
+}
+.widget-tags li{
+	float: left;
+	width: auto;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.widget-tags li a{
+	display: inline-block;
+	padding: 4px 10px;
+	border:1px solid #ccc;
+}
+.widget-tags li:hover a{
+	color:#fff;
+	border-color: transparent;
+}
