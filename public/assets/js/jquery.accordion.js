@@ -7,8 +7,8 @@
  * @license http://www.snyderplace.com/accordion/license.txt New BSD
  * @version 1.1
  */
-(function($) {
-    $.fn.accordion = function(options) {
+(function ($) {
+    $.fn.accordion = function (options) {
 
         //firewalling
         if (!this || this.length < 1) {
@@ -29,13 +29,13 @@
         var opened = '';
 
         //iterate each matched object, bind, and open/close
-        obj.each(function() {
+        obj.each(function () {
             var $this = $(this);
             saveOpts($this, opts);
 
             //bind it to the event
             if (opts.bind == 'mouseenter') {
-                $this.bind('mouseenter', function(e) {
+                $this.bind('mouseenter', function (e) {
                     e.preventDefault();
                     toggle($this, opts);
                 });
@@ -43,7 +43,7 @@
 
             //bind it to the event
             if (opts.bind == 'mouseover') {
-                $this.bind('mouseover',function(e) {
+                $this.bind('mouseover', function (e) {
                     e.preventDefault();
                     toggle($this, opts);
                 });
@@ -51,7 +51,7 @@
 
             //bind it to the event
             if (opts.bind == 'click') {
-                $this.bind('click', function(e) {
+                $this.bind('click', function (e) {
                     e.preventDefault();
                     toggle($this, opts);
                 });
@@ -59,7 +59,7 @@
 
             //bind it to the event
             if (opts.bind == 'dblclick') {
-                $this.bind('dblclick', function(e) {
+                $this.bind('dblclick', function (e) {
                     e.preventDefault();
                     toggle($this, opts);
                 });
@@ -127,7 +127,7 @@
     //hides a accordion panel
     function close(opts) {
         opened = $(document).find('.' + opts.cssOpen);
-        $.each(opened, function() {
+        $.each(opened, function () {
             //give the proper class to the linked element
             $(this).addClass(opts.cssClose).removeClass(opts.cssOpen);
             opts.animateClose($(this), opts);
@@ -154,8 +154,7 @@
     //toggle a accordion on an event
     function toggle($this, opts) {
         // close the only open item
-        if ($this.hasClass(opts.cssOpen))
-        {
+        if ($this.hasClass(opts.cssOpen)) {
             close(opts);
             //do cookies if plugin available
             if (useCookies(opts)) {
@@ -182,8 +181,7 @@
     }
 
     //set a cookie
-    function setCookie(value, opts)
-    {
+    function setCookie(value, opts) {
         //can use the cookie plugin
         if (!useCookies(opts)) { //no, quit here
             return false;
@@ -194,8 +192,7 @@
     }
 
     //check if a accordion is in the cookie
-    function inCookie(value, opts)
-    {
+    function inCookie(value, opts) {
         //can use the cookie plugin
         if (!useCookies(opts)) {
             return false;
@@ -218,8 +215,7 @@
     }
 
     //check if a cookie is set
-    function issetCookie(opts)
-    {
+    function issetCookie(opts) {
         //can we use the cookie plugin
         if (!useCookies(opts)) { //no, quit here
             return false;

@@ -5703,7 +5703,7 @@ video {
     margin-bottom: 0px;
 }
 
-.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li a {
+.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li Link {
     font-size: 18px;
     line-height: normal;
     height: auto;
@@ -5712,12 +5712,12 @@ video {
     padding-left: 15px;
 }
 
-.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li a:hover {
+.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li Link:hover {
     padding-left: 20px;
     background: none;
 }
 
-.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li a:before {
+.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li Link:before {
     position: absolute;
     content: "";
     top: 50%;
@@ -5730,7 +5730,7 @@ video {
     margin-top: -2px;
 }
 
-.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li a:hover:before {
+.d-help-navigation-wrap .navigation ul .d-help-megamenu .d-help-mega-feature ul li Link:hover:before {
     left: 5px;
 }
 

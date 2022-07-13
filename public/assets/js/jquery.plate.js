@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     'use strict';
 
     var namespace = 'jquery-plate';
@@ -24,7 +24,7 @@
             .on('mousemove.' + namespace, this.onMouseMove.bind(this));
     }
 
-    Plate.prototype.config = function(options) {
+    Plate.prototype.config = function (options) {
         this.options = $.extend({
             inverse: false,
             perspective: 500,
@@ -33,12 +33,12 @@
         }, this.options, options);
     };
 
-    Plate.prototype.destroy = function() {
+    Plate.prototype.destroy = function () {
         this.$element.css('transform', this.originalTransform);
         this.$container.off('.' + namespace);
     };
 
-    Plate.prototype.update = function(offsetX, offsetY, duration) {
+    Plate.prototype.update = function (offsetX, offsetY, duration) {
         var rotateX;
         var rotateY;
 
@@ -73,11 +73,11 @@
         }
     };
 
-    Plate.prototype.reset = function(duration) {
+    Plate.prototype.reset = function (duration) {
         this.update(null, null, duration);
     };
 
-    Plate.prototype.transform = function(rotateX, rotateY) {
+    Plate.prototype.transform = function (rotateX, rotateY) {
         this.currentX = rotateX;
         this.currentY = rotateY;
         this.$element.css('transform',
@@ -87,7 +87,7 @@
         );
     };
 
-    Plate.prototype.animate = function(rotateX, rotateY, duration) {
+    Plate.prototype.animate = function (rotateX, rotateY, duration) {
         if (duration) {
             this.animation = this.animation || {};
 
@@ -105,11 +105,11 @@
         }
     };
 
-    Plate.prototype.round = function(number) {
+    Plate.prototype.round = function (number) {
         return Math.round(number * 1000) / 1000;
     };
 
-    Plate.prototype.offsetCoords = function(event) {
+    Plate.prototype.offsetCoords = function (event) {
         var offset = this.$container.offset();
         return {
             x: event.pageX - offset.left,
@@ -117,7 +117,7 @@
         };
     };
 
-    Plate.prototype.onAnimationFrame = function(timestamp) {
+    Plate.prototype.onAnimationFrame = function (timestamp) {
         this.animation = this.animation || {};
 
         var delta = timestamp - (this.animation.time || 0);
@@ -140,22 +140,22 @@
         }
     };
 
-    Plate.prototype.onMouseEnter = function(event) {
+    Plate.prototype.onMouseEnter = function (event) {
         var offset = this.offsetCoords(event);
         this.update(offset.x, offset.y, this.options.animationDuration);
     };
 
-    Plate.prototype.onMouseLeave = function(event) {
+    Plate.prototype.onMouseLeave = function (event) {
         this.reset(this.options.animationDuration);
     };
 
-    Plate.prototype.onMouseMove = function(event) {
+    Plate.prototype.onMouseMove = function (event) {
         var offset = this.offsetCoords(event);
         this.update(offset.x, offset.y);
     };
 
-    $.fn.plate = function(options) {
-        return this.each(function() {
+    $.fn.plate = function (options) {
+        return this.each(function () {
             var $element = $(this);
             var plate = $element.data(namespace);
 

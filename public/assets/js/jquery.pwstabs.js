@@ -8,37 +8,29 @@
  * Licensed under the MIT license
  */
 ;
-(function ($, window, document, undefined)
-{
+(function ($, window, document, undefined) {
 
     var pluginName = "pwstabs",
-            defaults = {
-                effect: 'scale', // You can change effects of your tabs container: scale / slideleft / slideright / slidetop / slidedown / none
-                defaultTab: 1, // The tab we want to be opened by default
-                containerWidth: '100%', // Set custom container width if not set then 100% is used
-                tabsPosition: 'horizontal', // Tabs position: horizontal / vertical
-                horizontalPosition: 'top', // Tabs horizontal position: top / bottom
-                verticalPosition: 'left', // Tabs vertical position: left / right
-                responsive: false, // BETA: Make tabs container responsive: true / false - boolean
-                theme: '', // Theme name, you can add your own and define it here. This way you dont have to change default CSS. theme: 'name' - string
-                rtl: false, // Right to left support: true/ false
-                onBeforeFirstInit: function ()
-                {},
-                onAfterFirstInit: function ()
-                {},
-                onBeforeInit: function ()
-                {},
-                onAfterInit: function ()
-                {},
-                onBeforeChange: function ()
-                {},
-                onAfterChange: function ()
-                {}
-            };
+        defaults = {
+            effect: 'scale', // You can change effects of your tabs container: scale / slideleft / slideright / slidetop / slidedown / none
+            defaultTab: 1, // The tab we want to be opened by default
+            containerWidth: '100%', // Set custom container width if not set then 100% is used
+            tabsPosition: 'horizontal', // Tabs position: horizontal / vertical
+            horizontalPosition: 'top', // Tabs horizontal position: top / bottom
+            verticalPosition: 'left', // Tabs vertical position: left / right
+            responsive: false, // BETA: Make tabs container responsive: true / false - boolean
+            theme: '', // Theme name, you can add your own and define it here. This way you dont have to change default CSS. theme: 'name' - string
+            rtl: false, // Right to left support: true/ false
+            onBeforeFirstInit: function () { },
+            onAfterFirstInit: function () { },
+            onBeforeInit: function () { },
+            onAfterInit: function () { },
+            onBeforeChange: function () { },
+            onAfterChange: function () { }
+        };
 
 
-    function Plugin(element, options)
-    {
+    function Plugin(element, options) {
         this.element = $(element);
         this.$elem = $(this.element);
         this.settings = $.extend({}, defaults, options);
@@ -59,8 +51,7 @@
          * 
          * @since 1.0.0
          */
-        wrap: function ()
-        {
+        wrap: function () {
             // Variable for our selector @1.3.0
             this.selector = this.$elem;
 
@@ -82,8 +73,7 @@
          * 
          * @since 1.5.0
          */
-        setContainerWidth: function ()
-        {
+        setContainerWidth: function () {
             if (this.settings.containerWidth !== '100%')
                 this.container.css('width', this.settings.containerWidth);
         },
@@ -93,8 +83,7 @@
          * 
          * @since 1.0.0
          */
-        setContainerPositionClass: function ()
-        {
+        setContainerPositionClass: function () {
             if (this.settings.tabsPosition == 'vertical') {
 
                 /* 
@@ -103,20 +92,20 @@
                  * @1.4.0
                  */
                 if (this.container.closest('.pws_tab_single').length) {
-                    var parentWidth = this.container.closest('.pws_tab_single').innerWidth()
+                    var parentWidth = this.container.closest('.pws_tab_single').innerWidth();
 
                     this.container.css('width', parentWidth);
                 }
 
                 this.settings.verticalPosition == 'left'
-                        ? this.container.addClass('pws_tabs_vertical pws_tabs_vertical_left')
-                        : this.container.addClass('pws_tabs_vertical pws_tabs_vertical_right');
+                    ? this.container.addClass('pws_tabs_vertical pws_tabs_vertical_left')
+                    : this.container.addClass('pws_tabs_vertical pws_tabs_vertical_right');
 
             } else {
 
                 this.settings.horizontalPosition == 'top'
-                        ? this.container.addClass('pws_tabs_horizontal pws_tabs_horizontal_top')
-                        : this.container.addClass('pws_tabs_horizontal pws_tabs_horizontal_bottom');
+                    ? this.container.addClass('pws_tabs_horizontal pws_tabs_horizontal_top')
+                    : this.container.addClass('pws_tabs_horizontal pws_tabs_horizontal_bottom');
 
             }
         },
@@ -125,8 +114,7 @@
          * 
          * @since 1.0.0
          */
-        setContainerClasses: function ()
-        {
+        setContainerClasses: function () {
             this.setContainerPositionClass();
 
             // Array of effects @1.3.0
@@ -174,19 +162,18 @@
          * 
          * @since 1.0.0
          */
-        createControlsContainer: function ()
-        {
+        createControlsContainer: function () {
             if (this.settings.tabsPosition == 'vertical') {
 
                 this.settings.verticalPosition == 'left'
-                        ? this.container.prepend('<ul class="pws_tabs_controll"></ul>')
-                        : this.container.append('<ul class="pws_tabs_controll"></ul>');
+                    ? this.container.prepend('<ul class="pws_tabs_controll"></ul>')
+                    : this.container.append('<ul class="pws_tabs_controll"></ul>');
 
             } else { // Horizontal
 
                 this.settings.horizontalPosition == 'top'
-                        ? this.container.prepend('<ul class="pws_tabs_controll"></ul>')
-                        : this.container.append('<ul class="pws_tabs_controll"></ul>');
+                    ? this.container.prepend('<ul class="pws_tabs_controll"></ul>')
+                    : this.container.append('<ul class="pws_tabs_controll"></ul>');
 
             }
 
@@ -201,8 +188,7 @@
          * 
          * @since 1.5.0
          */
-        setControl: function (id, title)
-        {
+        setControl: function (id, title) {
             this.controls.append('<li><a data-tab-id="' + id + '">' + title + '</a></li>');
         },
         /**
@@ -211,13 +197,11 @@
          * 
          * @since 1.0.0
          */
-        setControls: function ()
-        {
+        setControls: function () {
             var $obj = this;
 
             var counter = 1;
-            this.tabs.each(function ()
-            {
+            this.tabs.each(function () {
                 // Tab Id @1.3.0
                 var id = $(this).data('pws-tab');
 
@@ -242,25 +226,22 @@
          * 
          * @since 1.5.0
          */
-        setIcon: function (id, icon)
-        {
+        setIcon: function (id, icon) {
             this.controls.find('[data-tab-id="' + id + '"]')
-                    .prepend('<i class="fa ' + icon + '"></i>');
+                .prepend('<i class="fa ' + icon + '"></i>');
         },
         /**
          * Set icons for tabs controls
          * 
          * @since 1.1.4
          */
-        setIcons: function ()
-        {
+        setIcons: function () {
             var $obj = this;
 
             /*
              * Check if a controller has icon data @1.1.4
              */
-            this.selector.children('[data-pws-tab-icon]').each(function ()
-            {
+            this.selector.children('[data-pws-tab-icon]').each(function () {
                 var tabId = $(this).attr('data-pws-tab');
                 var tabName = $(this).attr('data-pws-tab-name');
                 var iconData = $(this).attr('data-pws-tab-icon');
@@ -268,7 +249,7 @@
                 // If no tab name is set
                 if (tabName == '') {
                     $obj.controls.find('[data-tab-id="' + tabId + '"]')
-                            .addClass('pws_tab_noname');
+                        .addClass('pws_tab_noname');
                 }
 
                 // Add icon to the tab
@@ -279,8 +260,7 @@
         /**
          * Sets width and height for verticaly positioned tabs
          */
-        setVerticalSize: function ()
-        {
+        setVerticalSize: function () {
             if (this.settings.tabsPosition == 'vertical') {
                 var coefficient = this.container.innerWidth() / 450;
                 var letterSize = parseInt(this.controller.css('font-size')) / coefficient; // @1.4.0
@@ -308,8 +288,7 @@
         /**
          * Set default tab
          */
-        setDefaultTab: function ()
-        {
+        setDefaultTab: function () {
             // Show default tab @1.4.0
             this.defaultTab.addClass('pws_show').show();
 
@@ -317,13 +296,12 @@
              * Add active class to default tabs controller
              */
             this.controls.find('[data-tab-id="' + this.defaultTab.data('pws-tab') + '"]')
-                    .addClass('pws_tab_active');
+                .addClass('pws_tab_active');
         },
         /**
          * Make PWS Tabs responsive
          */
-        addResponsiveFeature: function ()
-        {
+        addResponsiveFeature: function () {
             var $obj = this;
 
             if ($obj.settings.responsive) {
@@ -337,14 +315,12 @@
                 var pwsResponsiveControllLiPercentage = 100 / pwsResponsiveControllLiCounter;
 
                 // Get highest LI
-                var pwsResponsiveControllLiMaxHeight = Math.max.apply(null, $obj.controllerLi.map(function ()
-                {
+                var pwsResponsiveControllLiMaxHeight = Math.max.apply(null, $obj.controllerLi.map(function () {
                     return $(this).height();
                 }).get());
 
 
-                $(window).on('resize load', function (e)
-                {
+                $(window).on('resize load', function (e) {
                     var $pluginSettings = $obj.settings;
                     var tabsPosition = $pluginSettings.tabsPosition;
                     var containerWidth = $pluginSettings.containerWidth;
@@ -359,8 +335,7 @@
                         $obj.controllerLi.css('width', pwsResponsiveControllLiPercentage + '%');
 
                         // Add height to each LIs
-                        $obj.controller.each(function ()
-                        {
+                        $obj.controller.each(function () {
                             $(this).height(pwsResponsiveControllLiMaxHeight);
                         });
 
@@ -386,16 +361,14 @@
                         $obj.controllerLi.width('');
 
                         // Popup tabs menu trigger
-                        $obj.container.unbind().on('click', '.pws_responsive_small_menu a', function (e)
-                        {
+                        $obj.container.unbind().on('click', '.pws_responsive_small_menu a', function (e) {
                             e.preventDefault();
 
                             $obj.container.find('ul.pws_tabs_menu_popup').toggleClass('show');
                         });
 
                         // Hide menu on tab pick
-                        $obj.container.find('ul.pws_tabs_menu_popup li a').on('click', function (e)
-                        {
+                        $obj.container.find('ul.pws_tabs_menu_popup li a').on('click', function (e) {
                             e.preventDefault();
                             $(this).closest('ul.pws_tabs_menu_popup').removeClass('show');
                         });
@@ -412,8 +385,7 @@
                         $obj.container.find('.pws_responsive_small_menu').remove();
                         $obj.controls.removeClass('pws_tabs_menu_popup');
                         $obj.controls.show();
-                        $obj.controller.on('click', function (e)
-                        {
+                        $obj.controller.on('click', function (e) {
                             e.preventDefault();
                             $(this).parent().parent().show();
                         });
@@ -427,8 +399,7 @@
          * 
          * @since 1.0.0
          */
-        init: function ()
-        {
+        init: function () {
             this.settings.onBeforeInit.call(this);
 
             var $obj = this;
@@ -468,8 +439,7 @@
             /*
              * Controller click function
              */
-            this.controls.on('click', 'a', function (e)
-            {
+            this.controls.on('click', 'a', function (e) {
                 e.preventDefault();
 
                 $obj.settings.onBeforeChange.call($obj);
@@ -485,14 +455,12 @@
                 // Add an effect to a tab on click @1.4.0
                 $obj.tabs.removeClass('pws_show');
 
-                setTimeout(function ()
-                {
+                setTimeout(function () {
                     $obj.tabs.hide();
                     currentTab.show();
                 }, 400);
 
-                setTimeout(function ()
-                {
+                setTimeout(function () {
                     currentTab.addClass('pws_show');
                     $obj.settings.onAfterChange.call($obj);
                 }, 450);
@@ -513,8 +481,7 @@
          * 
          * @since 1.5.0
          */
-        setOption: function (option, value)
-        {
+        setOption: function (option, value) {
             this.settings[option] = value;
         },
         /**
@@ -522,23 +489,21 @@
          * 
          * @since 1.5.0
          */
-        destroy: function ()
-        {
+        destroy: function () {
             this.controls.remove();
 
             this.selector.unwrap().removeClass('pws_tabs_list');
 
             this.tabs.show()
-                    .removeClass('pws_tab_single pws_hide pws_show')
-                    .removeAttr('style');
+                .removeClass('pws_tab_single pws_hide pws_show')
+                .removeAttr('style');
         },
         /**
          * Rebuild the plugin
          * 
          * @since 1.5.0
          */
-        rebuild: function ()
-        {
+        rebuild: function () {
             this.destroy();
             this.init();
         },
@@ -549,8 +514,7 @@
          * 
          * @since 1.5.0
          */
-        addTab: function (args)
-        {
+        addTab: function (args) {
             var defaultArgs = {
                 id: '',
                 name: '',
@@ -562,11 +526,11 @@
 
             // Add tab
             var tab = $('<div />').appendTo(this.selector)
-                    .addClass('pws_tab_single pws_hide')
-                    .attr('data-pws-tab', params.id)
-                    .attr('data-pws-tab-name', params.name)
-                    .hide()
-                    .html(params.content);
+                .addClass('pws_tab_single pws_hide')
+                .attr('data-pws-tab', params.id)
+                .attr('data-pws-tab-name', params.name)
+                .hide()
+                .html(params.content);
 
             // Add tab control
             this.setControl(params.id, params.name);
@@ -587,8 +551,7 @@
          * 
          * @since 1.5.0
          */
-        removeTab: function (index)
-        {
+        removeTab: function (index) {
             var tab = this.tabs.eq(index - 1);
 
             // Check if the tab being removed is active
@@ -607,14 +570,12 @@
 
     };
 
-    $.fn[pluginName] = function (options)
-    {
+    $.fn[pluginName] = function (options) {
 
         var args = $.makeArray(arguments);
         var selector = args.slice(1);
 
-        return this.each(function ()
-        {
+        return this.each(function () {
             var instance = $.data(this, pluginName);
 
             if (instance) {
