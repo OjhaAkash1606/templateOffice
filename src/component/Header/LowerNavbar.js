@@ -12,17 +12,20 @@ function LowerNavbar() {
             <div className="d-help-navigation-wrap">
                 <nav className="navigation">
                     <ul>
-                        {Nav_items.map((item) => (
-                            <li>
+                        {Nav_items.map((item, i) => (
+                            <li key={i}>
                                 <Link to={item.path}>{item.title}</Link>
                                 {
-                                    item.subItem && item.subnav.map((list) => (
-                                        <>
-                                            <ul className={list.cName}>
-                                                <li><Link to={list.path}>{list.title}</Link></li>
-                                            </ul>
-                                        </>
-                                    ))
+                                    item.subItem &&
+                                    <ul className={item.cName}>{
+
+                                        item.subnav.map((list, ind) => (
+                                            <>
+                                                <li key={ind}><Link to={list.path}>{list.title}</Link></li>
+                                            </>
+                                        ))
+                                    }
+                                    </ul>
                                 }
                             </li>
                         ))}
@@ -33,17 +36,20 @@ function LowerNavbar() {
                     <button className="dl-trigger">Open Menu</button>
                     <ul className="dl-menu">
 
-                        {Nav_items.map((item) => (
-                            <li className={item.resClass}>
+                        {Nav_items.map((item, i) => (
+                            <li className={item.resClass} key={i}>
                                 <Link to={item.path}>{item.title}</Link>
                                 {
-                                    item.subItem && item.subnav.map((list) => (
-                                        <>
-                                            <ul className={list.resSubMenu}>
-                                                <li><Link to={list.path}>{list.title}</Link></li>
-                                            </ul>
-                                        </>
-                                    ))
+                                    item.subItem && <ul className={item.resSubMenu}>
+
+                                        {item.subnav.map((list, ind) => (
+                                            <>
+
+                                                <li key={ind}><Link to={list.path}>{list.title}</Link></li>
+                                            </>
+                                        ))
+                                        }
+                                    </ul>
                                 }
                             </li>
                         ))}
