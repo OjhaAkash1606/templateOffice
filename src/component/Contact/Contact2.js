@@ -10,38 +10,9 @@ function Contact2() {
             <div id="d-help" className="d-relf-wrapper">
                 <Header2 subTitle={{ title: "Contact Us", root: "Home", current: "Contact Us" }} />
 
-                {/* <div className="d-relf-banner5 sab-bnr charity-overlay">
-                    <div className="container">
-                        <div className="d-help-sab-banner-text">
-                            <h2>contact us</h2>
-                            <ul className="breadcrumb">
-                                <li><a href="#">Home</a></li>
-                                <li className="active">contact us 02</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="d-help-blog-grid">
                     <GoogleLocation />
-                    {/* <div className="d-help-map">
-                        <div id="map-canvas" className="map-canvas">
-                            <Map google={this.props.google} zoom={14}
-                                initialCenter={{ lat: 23.02213876801439, lng: 72.63747492059854 }}>
 
-
-
-
-                                <Marker onClick={this.onMarkerClick}
-                                    name={'Current location'} />
-
-                                <InfoWindow onClose={this.onInfoWindowClose}>
-                                    <div>
-                                        <h1>{this?.state.selectedPlace.name}</h1>
-                                    </div>
-                                </InfoWindow>
-                            </Map>
-                        </div>
-                    </div> */}
                     <div className="d-help-location">
                         <div className="container">
                             <div className="row">
