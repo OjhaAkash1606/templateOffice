@@ -15,7 +15,7 @@ function UperNavbar() {
                 </ul>
                 <ul className="d-help-social-media">
                     <li>
-                        <a href="#"><i className="fa fa-facebook"></i></a>
+                        <a href="https://facebook.com"><i className="fa fa-facebook"></i></a>
                     </li>
                     <li>
                         <a href="#"><i className="fa fa-twitter"></i></a>

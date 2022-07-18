@@ -16,9 +16,10 @@ function BoardTrustee() {
             <section class="section-data data" id='service'>
 
 
-                {introItems.map((item) => (
-                    <div class="education-div information ">
-                        <p class="para education-para">
+                {introItems.map((item, ind) => (
+                    // <div class="education-div information ">
+                    <div class={ind % 2 === 0 ? "health-div information" : "information"}>
+                        <p class={ind % 2 === 0 ? "para health-para" : "para"}>
                             <b>
                                 {item.name}
                             </b>

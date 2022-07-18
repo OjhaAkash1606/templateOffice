@@ -1,16 +1,18 @@
 import React from 'react';
 import Header2 from '../../Header/Header2';
 import Footer1 from '../../Footer/Footer1';
-import { OverViewItems } from './OverViewItem';
-function Overview() {
+import { permanentActivityItems } from './PermanentActivityItems';
+function PermanentActivity() {
     return (
         <>
-            <Header2 subTitle={{ title: "Over View", root: "Home", current: "Over View" }} />
+            <Header2 subTitle={{ title: "Permanent Activity", root: "Home", current: "Permanent Activity" }} />
 
 
             <section class="section-data data" id='service'>
                 {
-                    OverViewItems.map((item, ind) => (
+                    permanentActivityItems.map((item, ind) => (
+
+
                         <div class="education-div information" key={ind}>
                             <p class="education-para">
                                 <b>
@@ -20,18 +22,15 @@ function Overview() {
                                 {item.content}
                             </p>
                         </div>
-
                     ))
                 }
-
-
-
-
             </section>
+
+
 
             <Footer1 />
         </>
     );
 }
 
-export default Overview;
+export default PermanentActivity;
